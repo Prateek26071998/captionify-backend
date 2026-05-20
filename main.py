@@ -19,6 +19,14 @@ from faster_whisper import WhisperModel
 from deep_translator import GoogleTranslator
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return {
+        "status": "success",
+        "message": "Captionify Backend Running"
+    }
+
 UPLOAD_FOLDER = 'uploads'
 PROCESSED_FOLDER = 'processed'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
